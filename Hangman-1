@@ -1,0 +1,69 @@
+def start():
+  print("Welcome to Hangman")
+  
+  while True:
+      target = input ("What's the word to guess?")
+      target = target.upper()
+      #print(target)
+      letters_correct = ['_']*len(target)
+      letters_guessed = []
+      letters_correct = []
+      letters_wrong = []
+    
+      #import re
+      #word = "target"
+      #word = re.sub('w', '_ ', word)
+    
+      for letter in target:
+        letters_correct.append('_')
+      
+      while True:
+        guess = input("Guess a letter")
+        guess = guess.upper()
+      if len(guess) != 1:
+       print('Please enter a single letter.')
+      else:
+        print(guess)
+    
+      if guess != '' and not guess in letters_guessed:
+        letters_guessed.append(guess)
+        counter=0
+      
+        if guess in target:
+          print ("Letter appears")
+          for letter in target:
+            if letter == guess:
+              letters_correct[counter] = letter
+            counter = counter + 1
+     
+      if guess not in target:
+        letters_wrong.append(guess)
+        counter=0
+        print ("Bad luck, try again")
+      #if guess in letters_guessed:
+        #print('You have already guessed that letter. Choose again.')
+        #if guess not in target
+         
+      #if guess != target and guess in letters_wrong 
+        letters_wrong[counter] = guess
+        counter = counter + 1
+        #if letters_wrong[counter] = 7
+          #print "HANGMAN! Try again?"
+          
+    #this prints "You have already guessed.." in all cases...???
+        #else:
+          #print("Nope")
+        
+      feedback = ''.join(letters_correct)
+      print(feedback)
+      if feedback == target:
+        print ('Winning!')
+  
+  if guess.lower() in {'q', 'quit', 'exit'}:
+    print ("Thanks for playing!")
+    return
+  else:
+    print ("Thanks for playing!")
+    start()
+    # if it does...
+    # and if it doesn't!    
