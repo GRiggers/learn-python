@@ -1,4 +1,6 @@
-def start():
+#NOT WORKING!!!!!
+#the below was to help define the return to start loop at the end
+#def start():
   print("Welcome to Hangman")
   
   while True:
@@ -8,8 +10,10 @@ def start():
       letters_correct = ['_']*len(target)
       letters_guessed = []
       letters_correct = []
+#to set up empty list for wrong letter count
       letters_wrong = []
-    
+ 
+#the next is to try to import ASCII - didn't work - also think this is whats supposed to go on in line 9
       #import re
       #word = "target"
       #word = re.sub('w', '_ ', word)
@@ -20,6 +24,8 @@ def start():
       while True:
         guess = input("Guess a letter")
         guess = guess.upper()
+
+#this is  little input validaiton to ensure only 1 guess a time - works
       if len(guess) != 1:
        print('Please enter a single letter.')
       else:
@@ -44,9 +50,10 @@ def start():
         #print('You have already guessed that letter. Choose again.')
         #if guess not in target
          
+#the following was to collect and count wrong guesses        
       #if guess != target and guess in letters_wrong 
-        letters_wrong[counter] = guess
-        counter = counter + 1
+        #letters_wrong[counter] = guess
+        #counter = counter + 1
         #if letters_wrong[counter] = 7
           #print "HANGMAN! Try again?"
           
